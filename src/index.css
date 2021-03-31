@@ -1,0 +1,9 @@
+.out{
+  color: red;
+  font-size: 12px;
+  overflow: hidden;
+  font-weight: bold;
+}
+body{
+  background-color: beige;
+}
