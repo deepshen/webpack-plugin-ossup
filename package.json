@@ -1,6 +1,6 @@
 {
   "name": "webpack-ossup-plugin",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "ossPlugin",
   "main": "lib/index.js",
   "files": [
@@ -8,7 +8,7 @@
     "README.md"
   ],
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "NODE_ENV=qa webpack-dev-server",
     "build": "rollup -c"
   },
   "keywords": [],
@@ -18,7 +18,6 @@
     "ali-oss": "^6.12.0"
   },
   "devDependencies": {
-    "rollup-plugin-json": "^4.0.0",
     "@babel/core": "^7.12.10",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^5.0.1",
@@ -27,6 +26,8 @@
     "rollup": "^2.36.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "style-loader": "^2.0.0",
     "webpack": "^4.3.0",
@@ -34,5 +35,8 @@
     "webpack-dev-server": "^3.11.0",
     "webpack-ossup-plugin": "^1.0.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "bin": {
+    "devUp": "lib/devUp.js"
+  }
 }

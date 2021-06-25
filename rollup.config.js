@@ -1,6 +1,7 @@
 import common from 'rollup-plugin-commonjs'
 import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
+import copy from 'rollup-plugin-copy'
 
 export default {
 	input: 'plugin/index.js',
@@ -17,6 +18,12 @@ export default {
 		'path'
 	],
 	plugins:[
+		copy({
+			targets: [
+				{src: 'plugin/aliOss.js', dest: 'lib'},
+				{src: 'plugin/devUp.js', dest: 'lib'}
+			]
+		}),
 		resolve(),
 		common({
 			ignore: [ 'conditional-runtime-dependency' ]

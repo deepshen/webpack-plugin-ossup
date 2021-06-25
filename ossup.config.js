@@ -1,4 +1,6 @@
 const path = require('path')
+const env = process.env.NODE_ENV
+console.log(env)
 module.exports = {
 	assets: path.resolve(__dirname,'src/assets'),
 	reg: '@oss',
