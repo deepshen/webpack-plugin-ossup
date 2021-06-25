@@ -1,6 +1,11 @@
+const path = require('path')
 const OssClient = require('./aliOss')
+const config = require(path.resolve(process.cwd(),'ossup.config.js')) || {}
 
-function FileListPlugin(options) {
+
+function FileListPlugin(opt={}) {
+	let options = {...config,...opt}
+	console.log(config)
 	this.reg = options.reg || ''
 	this.matchReg = new RegExp(`(${options.reg})(.+?\.(png|jpg|jpeg|svg|gif))`,'g')
 	this.replace = options.prefix?options.replace+'/'+options.prefix:options.replace

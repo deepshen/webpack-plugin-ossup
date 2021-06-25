@@ -13,11 +13,14 @@ export default {
 		}
 	},
 	external:[
-		'ali-oss'
+		'ali-oss',
+		'path'
 	],
 	plugins:[
 		resolve(),
-		common(),
+		common({
+			ignore: [ 'conditional-runtime-dependency' ]
+		}),
 		babel({
 			exclude:['node_modules']
 		}),

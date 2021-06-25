@@ -7,6 +7,21 @@ npm i webpack-ossup-plugin 或者
 yarn add webpack-ossup-plugin
 ```
 # 使用方式
+### 使用配置文件
+配置文件在项目外层为ossup.config.js,插件会默认读取这个配置文件的内容，
+然后和传入插件的options合并，传入插件的参数权重更高一点。
+```
+module.export = {
+    assets: path.resolve(__dirname,'src/assets'),
+    reg: '@oss',
+    prefix: 'ceshi',
+    replace: 'https://gxm-gf.oss-cn-beijing.aliyuncs.com',
+    region: 'oss-cn-beijing',
+    accessKeyId:'LTAI4G38u4xvLeUcrq5y7xz7',
+    accessKeySecret:'t6pTYIqHeIqZoNA1IhC7eBx0vN7DUF',
+    bucket:'gxm-gf',
+}
+```
 ### 1.常规项目
 在webpack.config.js中
 ```
